@@ -18,7 +18,7 @@
 *.sln.docstates
 
 # Rider / JetBrains
-.idea/
+.idea/	
 *.sln.iml
 *.Rider/
 
