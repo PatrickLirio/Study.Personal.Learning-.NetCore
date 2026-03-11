@@ -47,7 +47,7 @@ namespace UserAuthApiProperArchitecture.Infrastructure.Identity
                 signingCredentials: creds
             );
 
-            // Serialize the token to a compact string: xxxxx.yyyyy.zzzzz 
+            // Serialize the token to a compact string: xxxxx.yyyyy.zzzzz HEADER.PAYLOAD.SIGNATURE
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
