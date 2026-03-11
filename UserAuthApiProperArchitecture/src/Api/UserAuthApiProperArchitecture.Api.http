@@ -1,0 +1,6 @@
+@UserAuthApiProperArchitecture.Api_HostAddress = http://localhost:5223
+
+GET {{UserAuthApiProperArchitecture.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
