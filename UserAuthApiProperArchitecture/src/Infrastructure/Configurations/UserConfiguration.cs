@@ -5,7 +5,7 @@ using UserAuthApiProperArchitecture.Domain.Entities;
 
 namespace UserAuthApiProperArchitecture.Infrastructure.Configurations
 {
-    internal class UserConfiguration: IEntityTypeConfiguration<User>
+    public class UserConfiguration: IEntityTypeConfiguration<User>
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {

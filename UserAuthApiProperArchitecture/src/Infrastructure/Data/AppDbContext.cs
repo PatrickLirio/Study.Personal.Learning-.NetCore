@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using UserAuthApiProperArchitecture.Domain.Entities;
 
 
 namespace UserAuthApiProperArchitecture.Infrastructure.Data
@@ -12,7 +13,7 @@ namespace UserAuthApiProperArchitecture.Infrastructure.Data
 
         // DbSet<User> = a table called 'Users' in the database 
         // You query this like: _context.Users.Where(u => u.Email == email) 
-        public DbSet<Users> Users { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
