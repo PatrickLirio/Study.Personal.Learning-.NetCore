@@ -1,14 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using UserAuthApiProperArchitecture.Application.DTOs;
 using UserAuthApiProperArchitecture.Application.Interfaces;
 
 namespace UserAuthApiProperArchitecture.Api.Controllers
 {
+
     // [ApiController] enables automatic model validation, binding, and error responses 
     // [Route] sets the URL prefix: all endpoints start with /api/auth 
     [ApiController]
     [Route("api/[controller]")]
-    public class AuthController : ControllerBase
+    public class AuthController : UserController
     {
         // DI:.net provides IUserService automatically
         private readonly IUserService _userService;
@@ -46,10 +49,10 @@ namespace UserAuthApiProperArchitecture.Api.Controllers
 
             }
         }
+
         // POST /api/auth/login 
 
         [HttpPost("login")]
-
         public async Task<IActionResult> Login([FromBody] LoginRequestDTO request)
 
         {
