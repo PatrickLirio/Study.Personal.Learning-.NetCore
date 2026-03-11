@@ -81,5 +81,58 @@ namespace UserAuthApiProperArchitecture.Api.Controllers
 
         }
 
+        // This endpoint can ONLY be called by users with the Admin role 
+
+        [Authorize(Roles = "Admin")]
+
+        [HttpGet("admin/users")]
+
+        public async Task<IActionResult> GetAllUsers()
+
+        {
+
+            // Only admins reach here — non-admins get 403 Forbidden 
+
+            // ... return list of users 
+
+            return Ok(new { message = "Admin only data" });
+        }
+
+
+        // Multiple roles allowed: 
+
+        [Authorize(Roles = "Admin,Moderator")]
+
+        [HttpDelete("users/{id}")]
+
+        public async Task<IActionResult> DeleteUser(Guid id)
+
+        {
+
+            // Admin or Moderator can delete a user 
+
+            return NoContent();
+
+        }
+
+
+
+        // Any authenticated user (any role): 
+
+        [Authorize]
+
+        [HttpGet("profile")]
+
+        public IActionResult GetProfile() { ... }
+
+
+
+        // Public — no authentication needed: 
+
+        [AllowAnonymous]
+
+        [HttpPost("register")]
+
+        public async Task<IActionResult> Register(...) { ... }
     }
 }
