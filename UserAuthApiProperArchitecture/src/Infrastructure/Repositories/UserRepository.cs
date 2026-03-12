@@ -30,6 +30,6 @@ namespace UserAuthApiProperArchitecture.Infrastructure.Repositories
         public async Task AddAsync(User user) => await _context.Users.AddAsync(user);
 
         // SaveChangesAsync actually sends all pending SQL to the database 
-        public async Task SaveChangesAsync() => await _context.SaveChangesAsync();
+        public async Task SaveChangeAsync() => await _context.SaveChangesAsync();
     }
 }

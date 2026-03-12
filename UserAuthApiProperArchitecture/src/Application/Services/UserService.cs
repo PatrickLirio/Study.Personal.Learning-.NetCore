@@ -42,7 +42,7 @@ namespace UserAuthApiProperArchitecture.Application.Services
             };
             // Step 3: Persist to database via repository    
             await _userRepository.AddAsync(user);
-            await _userRepository.SaveChangesAsync();
+            await _userRepository.SaveChangeAsync();
             // Step 4: Generate JWT and return response DTO 
             var token = _jwtTokenService.GenerateToken(user);
             return MapToResponseDTO(user, token);

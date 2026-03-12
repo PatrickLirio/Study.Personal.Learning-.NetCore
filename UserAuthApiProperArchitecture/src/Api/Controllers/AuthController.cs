@@ -117,22 +117,22 @@ namespace UserAuthApiProperArchitecture.Api.Controllers
 
 
 
-        // Any authenticated user (any role): 
+        //// Any authenticated user (any role): 
 
-        [Authorize]
+        //[Authorize]
 
-        [HttpGet("profile")]
+        //[HttpGet("profile")]
 
-        public IActionResult GetProfile() { ... }
+        //public IActionResult GetProfile() { ... }
 
 
 
-        // Public — no authentication needed: 
+        //// Public — no authentication needed: 
 
-        [AllowAnonymous]
+        //[AllowAnonymous]
 
-        [HttpPost("register")]
+        //[HttpPost("register")]
 
-        public async Task<IActionResult> Register(...) { ... }
+        //public async Task<IActionResult> Register(...) { ... }
     }
 }

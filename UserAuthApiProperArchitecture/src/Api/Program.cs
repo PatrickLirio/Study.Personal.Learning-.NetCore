@@ -8,6 +8,7 @@ using UserAuthApiProperArchitecture.Infrastructure.Data;
 using UserAuthApiProperArchitecture.Infrastructure.Identity;
 using UserAuthApiProperArchitecture.Infrastructure.Repositories;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // ── 1. Database ──────────────────────────────────────────────── 
